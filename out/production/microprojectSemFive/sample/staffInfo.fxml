@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--==============================================================================================
+This fxml file is responsible for creating the UI of the staff information window.
+Controller class: StaffInfo
+===============================================================================================-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+            <Label text="Employee today's Attendance" AnchorPane.leftAnchor="450">
+                <font>
+                    <Font name="Verdana bold" size="20.5" />
+                </font>
+            </Label>
+   <TableView fx:id="employeeTable" layoutX="143.0" layoutY="21.0" prefHeight="200.0" prefWidth="453.0">
+     <columns>
+       <TableColumn fx:id="colEmpName" prefWidth="146.0" text="Employee Name" />
+       <TableColumn fx:id="colAttendance" prefWidth="167.0" text="Attendance" />
+         <TableColumn fx:id="colDepartment" prefWidth="139.0" text="Department" />
+     </columns>
+   </TableView>
+
+           <!-- <TableView fx:id="employeeTable" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="30" />-->
+
+</AnchorPane>

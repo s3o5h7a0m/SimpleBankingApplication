@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--==============================================================================================
+This fxml file is responsible for creating the UI of the manager window(manager operations scene).
+Controller class: ManagerOperations
+===============================================================================================-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.ManagerOperations" prefHeight="400.0" prefWidth="600.0">
+
+    <!--Delete icon on the right of list view-->
+    <Button AnchorPane.leftAnchor="250" style="-fx-background-radius: 0px;">
+        <font>
+            <Font name="Verdana bold" size="15"/>
+        </font>
+        <graphic>
+            <ImageView>
+                <Image url = "@/toolbarButtonGraphics/general/Delete24.gif"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <!--The Welcome Label which is followed by manager name-->
+    <Label fx:id = "welcomeLabel" AnchorPane.leftAnchor="450" AnchorPane.topAnchor="10">
+        <font>
+            <Font name="Verdana bold" size="50"/>
+        </font>
+    </Label>
+
+    <!--Active users label along with the count-->
+    <Label fx:id = "activeUsersLabel" AnchorPane.topAnchor="0.1" style="-fx-background-color: #F5F5F5;
+            -fx-text-fill: black">
+        <font>
+            <Font name="Verdana bold" size="20.5"/>
+        </font>
+    </Label>
+
+    <!--List view for displaying user name and account number-->
+    <ListView fx:id = "userListView" AnchorPane.leftAnchor="1.5" AnchorPane.bottomAnchor="0.1" AnchorPane.topAnchor="28"/>
+
+    <!--Manager operation button present on Manager menu-->
+    <GridPane AnchorPane.topAnchor="300" AnchorPane.leftAnchor="450" vgap="40" hgap="90">
+        <Button fx:id="btnCreateUser" text="Create user" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                onAction="#openCreateUserDialog" onMouseEntered="#onMouseEnteredForButtons"
+                onMouseExited="#onMouseExitedForButtons">
+            <font>
+                <Font name="Times New Roman" size="30"/>
+            </font>
+        </Button>
+        <Button fx:id="btnRemoveUser" text="Remove user" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                onAction="#openDeleteUserDialog" onMouseEntered="#onMouseEnteredForButtons"
+                onMouseExited="#onMouseExitedForButtons">
+            <font>
+                <Font name="Times New Roman" size="30" />
+            </font>
+        </Button>
+        <Button fx:id = "btnEmpTable" text="View Employee Table" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                GridPane.halignment="CENTER" GridPane.columnSpan="2" onAction="#openEmployeeTable"
+                onMouseEntered="#onMouseEnteredForButtons" onMouseExited="#onMouseExitedForButtons">
+            <font>
+                <Font name="Times New Roman" size="30"/>
+            </font>
+        </Button>
+    </GridPane>
+
+    <!--The help tooltip-->
+    <Button AnchorPane.rightAnchor="0.10" style="-fx-background-radius: 0px;">
+        <graphic>
+            <ImageView>
+                <Image url = "@/toolbarButtonGraphics/general/Help24.gif"/>
+            </ImageView>
+        </graphic>
+        <tooltip>
+            <Tooltip fx:id = "helpToolTip">
+                <font>
+                    <Font name="Times New Roman" size="15"/>
+                </font>
+            </Tooltip>
+        </tooltip>
+    </Button>
+
+    <!--Exit button-->
+    <Button fx:id = "exitButton" text="Exit" AnchorPane.bottomAnchor="50" AnchorPane.rightAnchor="100"
+            onAction="#closeManagerWindow">
+        <font>
+            <Font name="Times New Roman" size="30"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url = "@/toolbarButtonGraphics/general/Stop24.gif"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <!--The gray colored separator(line)-->
+    <Separator AnchorPane.bottomAnchor="75" AnchorPane.rightAnchor="214" AnchorPane.leftAnchor="250" stylesheets="styles.css"/>
+    <Separator AnchorPane.bottomAnchor="75" AnchorPane.rightAnchor="0.1" AnchorPane.leftAnchor="1266" stylesheets="styles.css"/>
+
+</AnchorPane>

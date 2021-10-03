@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--==============================================================================================
+This fxml file is responsible for creating the UI of the main window(primary stage).
+Controller class: MainController
+===============================================================================================-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<GridPane id = "pane" alignment="TOP_CENTER" hgap="10" vgap="50" xmlns="http://javafx.com/javafx/11.0.1"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController" stylesheets="@styles.css">
+
+    <!--Inserting padding on the top-->
+    <padding>
+        <Insets top="10" />
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" />
+    </columnConstraints>
+
+    <!--Exit button-->
+    <Button fx:id="mainQuitButton" onMouseEntered="#onMouseEnteredForButtons"
+            onMouseExited="#onMouseExitedForButtons" text="Exit" GridPane.rowIndex="6" alignment="CENTER"
+            onAction="#handleExitButtonAction">
+        <graphic>
+            <ImageView>
+                <Image url = "@/toolbarButtonGraphics/general/Stop24.gif"/>
+            </ImageView>
+        </graphic>
+        <font>
+            <Font name="Times New Roman" size="30" />
+        </font>
+    </Button>
+
+
+    <!--MINI BANKING label-->
+    <Label  text="✭✭✭MINI BANKING SYSTEM™✭✭✭" GridPane.columnSpan="1" id = "bankingLabel">
+        <font>
+            <Font name="Verdana bold" size="50" />
+        </font>
+    </Label>
+
+    <!--VBox for menu options as labels-->
+    <VBox spacing="50" GridPane.rowIndex="5">
+        <Label text="For manager menu " id = "mainLabel">
+            <graphic>
+                <ImageView>
+                    <Image url = "@/toolbarButtonGraphics/general/TipOfTheDay24.gif"/>
+                </ImageView>
+            </graphic>
+            <font>
+                <Font name="Times New Roman" size="40" />
+            </font>
+        </Label>
+        <Label text="For user menu " id = "mainLabel">
+            <graphic>
+                <ImageView>
+                    <Image url = "@/toolbarButtonGraphics/general/TipOfTheDay24.gif"/>
+                </ImageView>
+            </graphic>
+            <font>
+                <Font name="Times New Roman" size="40" />
+            </font>
+        </Label>
+    </VBox>
+
+    <!--VBox for "Click Here" buttons-->
+    <VBox spacing="50" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button fx:id="mainManagerButton" onMouseEntered="#onMouseEnteredForButtons"
+                onMouseExited="#onMouseExitedForButtons" text="Click here" onAction="#openManagerMenu">
+            <font>
+                <Font name="Times New Roman" size="30"/>
+            </font>
+        </Button>
+        <Button fx:id="mainUserButton" onMouseEntered="#onMouseEnteredForButtons"
+                onMouseExited="#onMouseExitedForButtons" text="Click here" onAction="#openUserMenu">
+            <font>
+                <Font name="Times New Roman" size="30" />
+            </font>
+        </Button>
+    </VBox>
+</GridPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Font?>
+
+<!--==============================================================================================
+This fxml file is responsible for creating the UI of the user login window(user login scene).
+Controller class: UserController
+===============================================================================================-->
+
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.UserController"
+          alignment="CENTER" hgap="10" vgap="50">
+
+    <!--Labels to prompt the user for username and password-->
+    <Label text = "User Account number" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <font>
+            <Font name="Times New Roman" size="40" />
+        </font>
+    </Label>
+    <Label text = "Password" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <font>
+            <Font name="Times New Roman" size="40" />
+        </font>
+    </Label>
+
+    <!--TextFields for username and password-->
+    <TextField fx:id = "accNumTf" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <PasswordField fx:id = "userPf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <!--Login button-->
+    <Button text = "Login" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.halignment="CENTER" onAction="#doLogin"
+                    fx:id="loginButton" onMouseEntered="#onMouseEnteredForButtons"
+                    onMouseExited="#onMouseExitedForButtons">
+        <font>
+            <Font name="Times New Roman" size="30"/>
+        </font>
+    </Button>
+
+    <!--Cancel button-->
+    <Button text = "Cancel" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="LEFT" fx:id = "cancelButton"
+            onMouseExited="#onMouseExitedForButtons" onMouseEntered="#onMouseEnteredForButtons"
+            onAction="#onCancelPressed">
+        <font>
+            <Font name="Times New Roman" size="30"/>
+        </font>
+    </Button>
+
+</GridPane>

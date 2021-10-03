@@ -1,0 +1,31 @@
+/*importing a Font from google*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/*Applies to all buttons present in the programs*/
+.button {
+    -fx-base: #64C9CF;
+    -fx-background-radius: 35px;
+ }
+
+/*Sets the background color of every stage to black*/
+.root {
+ -fx-background-color: black;
+}
+
+/*Font for banking label on the main window*/
+#bankingLabel {
+    -fx-font-family: 'Fredoka One', cursive;;
+    -fx-text-fill: #64C9CF;
+}
+
+/*Applies to all labels present in the programs*/
+.label {
+    -fx-text-fill: #64C9CF;
+}
+
+/*Setting grayish color to the separator in the User Window along with other things*/
+.separator .line {
+    -fx-background-color: #C0C0C0;
+    -fx-pref-height: 5;
+    -fx-border-color: null ;
+}

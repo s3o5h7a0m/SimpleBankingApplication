@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--==============================================================================================
+This fxml file is responsible for creating the UI of the manager login window(manager login scene).
+Controller class: ManagerController
+===============================================================================================-->
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.ManagerController" prefHeight="200" prefWidth="400" >
+
+    <!--The Welcome Label which is followed by manager name-->
+    <Label fx:id = "welcomeLabel" AnchorPane.leftAnchor="450" AnchorPane.topAnchor="10">
+        <font>
+            <Font name="Verdana bold" size="50"/>
+        </font>
+    </Label>
+
+    <!--HBox for password label and textfield-->
+    <HBox AnchorPane.topAnchor="300" AnchorPane.leftAnchor="500" spacing="30">
+        <Label text = "Password" >
+            <font>
+                 <Font name="Times New Roman" size="40" />
+            </font>
+        </Label>
+        <PasswordField fx:id = "passwordTf">
+            <font>
+                <Font name="Times New Roman" size="20" />
+            </font>
+        </PasswordField>
+    </HBox>
+
+    <!--Login button-->
+    <Button fx:id = "loginButton" text="Login" AnchorPane.topAnchor="400" AnchorPane.leftAnchor="550"
+            onAction="#doManagerLogin" onMouseEntered="#onMouseEnteredForButtons"
+            onMouseExited="#onMouseExitedForButtons">
+        <font>
+            <Font name="Times New Roman" size="30" />
+        </font>
+    </Button>
+
+    <!--Cancel button-->
+    <Button fx:id = "cancelButton" text="Cancel" AnchorPane.topAnchor="400" AnchorPane.leftAnchor="750"
+            onAction="#closeManagerLogin" onMouseEntered="#onMouseEnteredForButtons"
+            onMouseExited="#onMouseExitedForButtons">
+        <font>
+            <Font name="Times New Roman" size="30" />
+        </font>
+    </Button>
+
+</AnchorPane>
